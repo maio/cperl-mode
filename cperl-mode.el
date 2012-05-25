@@ -1149,13 +1149,6 @@ versions of Emacs."
 
 (if cperl-mode-map nil
   (setq cperl-mode-map (make-sparse-keymap))
-  (cperl-define-key "{" 'cperl-electric-lbrace)
-  (cperl-define-key "[" 'cperl-electric-paren)
-  (cperl-define-key "(" 'cperl-electric-paren)
-  (cperl-define-key "<" 'cperl-electric-paren)
-  (cperl-define-key "}" 'cperl-electric-brace)
-  (cperl-define-key "]" 'cperl-electric-rparen)
-  (cperl-define-key ")" 'cperl-electric-rparen)
   (cperl-define-key ";" 'cperl-electric-semi)
   (cperl-define-key ":" 'cperl-electric-terminator)
   (cperl-define-key "\C-j" 'newline-and-indent)
