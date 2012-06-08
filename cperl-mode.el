@@ -3068,12 +3068,11 @@ and closing parentheses and brackets."
 	  (cond		       ;;; [indentable terminator start-pos is-block]
 	   ((eq 'terminator (elt i 1)) ; Lone terminator of "indentable string"
 	    (goto-char (elt i 2))	; After opening parens
-	    (1- (current-column)))
+	    (current-indentation))
 	   ((eq 'first-line (elt i 1)); [indentable first-line start-pos]
 	    (goto-char (elt i 2))
 	    (+ (or cperl-regexp-indent-step cperl-indent-level)
-	       -1
-	       (current-column)))
+           (current-indentation)))
 	   ((eq 'cont-line (elt i 1)); [indentable cont-line pos prev-pos first-char start-pos]
 	    ;; Indent as the level after closing parens
 	    (goto-char (elt i 2))	; indent line
